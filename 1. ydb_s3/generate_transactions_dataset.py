@@ -3,7 +3,7 @@ import random
 from datetime import datetime, timedelta
 
 # Constants
-NUM_TRANSACTIONS = 1_000_000
+NUM_TRANSACTIONS = 350_000
 OUTPUT_FILE = "transactions_dataset.csv"
 
 # Product categories and names
@@ -21,8 +21,9 @@ def generate_random_date():
     random_days = random.randint(0, 5 * 365)
     return start_date + timedelta(days=random_days)
 
-def generate_transaction_data():
+def generate_transaction_data(counter):
     """Generate a single transaction record."""
+    transaction_id = counter
     user_id = random.randint(1, 100_000)  # Simulate 100,000 unique users
     category = random.choice(list(PRODUCT_CATEGORIES.keys()))
     product = random.choice(PRODUCT_CATEGORIES[category])
@@ -30,17 +31,19 @@ def generate_transaction_data():
     price_per_unit = round(random.uniform(50, 5000), 2)
     total_price = round(quantity * price_per_unit, 2)
     transaction_date = generate_random_date().strftime("%Y-%m-%d %H:%M:%S")
-    return [user_id, transaction_date, category, product, quantity, price_per_unit, total_price]
+    return [transaction_id, user_id, transaction_date, category, product, quantity, price_per_unit, total_price]
 
 def main():
     # Write the dataset to a CSV file
     with open(OUTPUT_FILE, mode="w", newline="") as file:
         writer = csv.writer(file)
         # Write the header
-        writer.writerow(["UserID", "TransactionDate", "Category", "Product", "Quantity", "PricePerUnit", "TotalPrice"])
+        writer.writerow(["TransactionID", "UserID", "TransactionDate", "Category", "Product", "Quantity", "PricePerUnit", "TotalPrice"])
         # Write transaction data
+        counter=0
         for _ in range(NUM_TRANSACTIONS):
-            writer.writerow(generate_transaction_data())
+            writer.writerow(generate_transaction_data(counter))
+            counter=counter+1
 
 if __name__ == "__main__":
     main()
