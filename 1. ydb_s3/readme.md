@@ -21,3 +21,6 @@
    --database /ru-central1/b1g6****/etnj**** \\ \
    --iam-token-file iam-token.txt \\ \
   import file csv -p dataset transactions_dataset.csv --header
+4. Результат можно увидеть в папке screenshots файл ydb.png
+5. В Data Transfer был создан трансфер из ydb в s3: в папке screenshots файл transfer.png
+6. Результат трансфера можно увидеть в папке screenshots файл s3.png
