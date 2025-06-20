@@ -1,5 +1,5 @@
-1. Данные сгенерированы скриптом generate_transactions_dataset.py
-2. В YDB создана таблица командой:
+1. Данные сгенерированы скриптом [generate_transactions_dataset.py](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/generate_transactions_dataset.py)
+2. В YDB создана таблица с помощью команды:
 ```bash
   ydb -e grpcs://lb.etnj****.ydb.mdb.yandexcloud.net:2135 \
   -d /ru-central1/b1g6****/etnj**** \
@@ -17,7 +17,7 @@
    primary key (TransactionID) 
    );"
 ```
-4. Данные загружены командой:
+4. Данные загружены с помощью команды:
 ```bash
   ydb \
    --endpoint grpcs://lb.etnj****.ydb.mdb.yandexcloud.net:2135 \
@@ -25,6 +25,9 @@
    --iam-token-file iam-token.txt \
   import file csv -p dataset transactions_dataset.csv --header
 ```
-6. Результат можно увидеть в папке screenshots файл ydb.png
-7. В Data Transfer был создан трансфер из ydb в s3: в папке screenshots файл transfer.png
-8. Результат трансфера можно увидеть в папке screenshots файл s3.png
+6. Загруженные данные ([result/ydb.png](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/ydb.png)):
+![alt text](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/ydb.png =250x)
+8. В Data Transfer был создан трансфер из ydb в s3 ([result/transfer.png](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/transfer.png)):
+![alt text](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/transfer.png)
+10. Успешный результат трансфера представлен в файле [result/dataset.csv](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/dataset.csv) и дополниельно [скриншот](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/s3.png) из s3:
+![alt text](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/s3.png)
