@@ -1,4 +1,4 @@
-# Отчет по итоговому заданию по курсу ETL
+# Отчет по итоговому заданию
 
 ### 1. Работа с Yandex DataTransfer
 1. Данные сгенерированы скриптом generate_transactions_dataset.py
