@@ -33,7 +33,14 @@
 8. Результат трансфера можно увидеть в папке screenshots файл s3.png
 
 ### 2. Автоматизация работы с Yandex Data Processing при помощи Apache AirFlow
-1. todo
+1. Подготовлена инфраструктура по [инструкции](https://yandex.cloud/ru/docs/managed-airflow/tutorials/data-processing-automation#infra)
+    - S3 бакет
+    - Metastore кластер
+    - Airflow кластер
+2. Данные были сгенерированы скриптом из первого задания (сам скрипт и csv файл лежат в папке "1. ydb_s3")
+3. PySpark задание (файл analyse.py) считает ежедневную выручку по категориям товаров и записывает данные в s3
+4. В файле etl-dag.py находится dag DATA_INGEST, который создает кластер, запускает задание, удаляет кластер
+5. В папке result лежит скриншот успешного запуска DAG, а также скриншот и файл полученного результата в s3 
 
 ### 3. Работа с топиками Apache Kafka с помощью PySpark заданий в Yandex Data Processing
 1. Подготовлена инфраструтура по [инструкции](https://yandex.cloud/ru/docs/managed-kafka/tutorials/data-processing#infra)
