@@ -25,9 +25,15 @@
    --iam-token-file iam-token.txt \
   import file csv -p dataset transactions_dataset.csv --header
 ```
-6. Загруженные данные ([result/ydb.png](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/ydb.png)):
-![alt text](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/ydb.png =250x)
+6. Загруженные данные в YDB ([result/ydb.png](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/ydb.png)):
+
+<img src="https://raw.githubusercontent.com/mvplatonova/hse_etl/main/1.%20ydb_s3/result/ydb.png" alt="текст" width="750"/>
+
 8. В Data Transfer был создан трансфер из ydb в s3 ([result/transfer.png](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/transfer.png)):
-![alt text](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/transfer.png)
-10. Успешный результат трансфера представлен в файле [result/dataset.csv](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/dataset.csv) и дополниельно [скриншот](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/s3.png) из s3:
-![alt text](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/s3.png)
+
+<img src="https://raw.githubusercontent.com/mvplatonova/hse_etl/main/1.%20ydb_s3/result/transfer.png" alt="текст" width="750"/>
+
+10. Успешный результат трансфера представлен в файле [result/dataset.csv](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/dataset.csv) и дополниельно
+ [скриншот](https://github.com/mvplatonova/hse_etl/blob/main/1.%20ydb_s3/result/s3.png) из s3:
+
+<img src="https://raw.githubusercontent.com/mvplatonova/hse_etl/main/1.%20ydb_s3/result/s3.png" alt="текст" width="750"/>
